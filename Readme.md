@@ -1,11 +1,14 @@
 # Google Dorking Playbook
 
+![Google Dorking](Assets/google.png)
+![Google Dorking](Assets/google.jpg)
+
 A comprehensive guide to Google Dorking, Search Operators, OSINT Reconnaissance, Research Techniques, and Bug Bounty Discovery.
 
 This repository is designed to help security researchers, bug bounty hunters, students, OSINT analysts, system administrators, and developers leverage Google's advanced search operators effectively.
 
 > **Educational and Defensive Security Purposes Only.**
-> 
+>
 > This repository focuses on lawful reconnaissance, information discovery, OSINT, and search optimization techniques. Users are responsible for complying with applicable laws, platform policies, and bug bounty program rules.
 
 ---
@@ -40,17 +43,21 @@ Most users only use simple keyword searches.
 Google Dorking is the practice of using advanced search operators to narrow search results and discover specific information more efficiently.
 
 Instead of searching:
+
 ```text
 xyz company reports
 ```
 
 You can search:
+
 ```text
 site:example.com filetype:pdf
 ```
+
 to find only PDF documents from a specific website.
 
 **Google Dorking is widely used in:**
+
 - Open Source Intelligence (OSINT)
 - Security Research
 - Bug Bounty Reconnaissance
@@ -67,6 +74,7 @@ to find only PDF documents from a specific website.
 Google Dorking (also known as Google Hacking) is the use of advanced Google search operators to identify specific types of information indexed by search engines.
 
 **The technique allows users to:**
+
 - Locate documents
 - Discover APIs
 - Find public resources
@@ -81,6 +89,7 @@ Google Dorking (also known as Google Hacking) is the use of advanced Google sear
 ## How Google Search Works
 
 Google continuously:
+
 1. Crawls websites
 2. Follows links
 3. Downloads content
@@ -103,69 +112,93 @@ Google Dorking helps refine searches against Google's index.
 
 ## Search Operator Cheat Sheet
 
-### 1: `site:` Search within a specific website.
+### 1: `site:` Search within a specific website
+
 - **Syntax:** `site:example.com`
 - **Example:**
+
   ```text
   site:xyz.com
   ```
+
 - **Use Cases:** Domain reconnaissance, Content discovery, Asset mapping
 
-### 2: `filetype:` Search for specific file types.
+### 2: `filetype:` Search for specific file types
+
 - **Syntax:** `filetype:pdf`
 - **Example:**
+
   ```text
   site:example.com filetype:pdf
   ```
+
 - **Finds:** PDFs, DOCX, XLSX, PPTX, TXT etc.
 
-### 3: `inurl:` Search for keywords inside URLs.
+### 3: `inurl:` Search for keywords inside URLs
+
 - **Syntax:** `inurl:admin`
 - **Example:**
+
   ```text
   site:example.com inurl:blog
   ```
+
 - **Use Cases:** Documentation discovery, Portal discovery, Resource mapping
 
-### 4: `intitle:` Search for keywords in page titles.
+### 4: `intitle:` Search for keywords in page titles
+
 - **Example:**
+
   ```text
   intitle:"documentation"
   ```
+
 - **Use Cases:** Documentation, Help centers, Public resources
 
-### 5: `allintitle:` Require multiple words in page titles.
+### 5: `allintitle:` Require multiple words in page titles
+
 - **Example:**
+
   ```text
   allintitle: security report
   ```
 
-### 6: `allinurl:` Require multiple words in URLs.
+### 6: `allinurl:` Require multiple words in URLs
+
 - **Example:**
+
   ```text
   allinurl: api docs
   ```
 
-### 7: `related:` Find websites related to a domain.
+### 7: `related:` Find websites related to a domain
+
 - **Example:**
+
   ```text
   related:example.com
   ```
 
-### 8: `cache:` View Google's cached version of a page.
+### 8: `cache:` View Google's cached version of a page
+
 - **Example:**
+
   ```text
   cache:example.com
   ```
 
-### 9: `before:` Search content published before a date.
+### 9: `before:` Search content published before a date
+
 - **Example:**
+
   ```text
   site:example.com before:2024-01-01
   ```
 
-### 10: `after:` Search content published after a date.
+### 10: `after:` Search content published after a date
+
 - **Example:**
+
   ```text
   site:example.com after:2024-01-01
   ```
@@ -175,22 +208,31 @@ Google Dorking helps refine searches against Google's index.
 ## Operator Combinations
 
 - **Find PDF Documents:**
+
   ```text
   site:example.com filetype:pdf
   ```
+
 - **Find Public Documentation:**
+
   ```text
   site:example.com inurl:docs
   ```
+
 - **Find Blog Posts:**
+
   ```text
   site:example.com inurl:blog
   ```
+
 - **Find Technical Reports:**
+
   ```text
   site:example.com filetype:pdf report
   ```
+
 - **Find Research Papers:**
+
   ```text
   site:edu filetype:pdf research
   ```
@@ -208,6 +250,7 @@ site:company.com
 ```
 
 **Goal:**
+
 - Understand company assets
 - Discover resources
 - Identify public information
@@ -218,6 +261,7 @@ site:company.com filetype:pdf
 ```
 
 **Possible Findings:**
+
 - Whitepapers
 - Reports
 - Manuals
@@ -229,6 +273,7 @@ site:company.com
 ```
 
 **Combine findings with:**
+
 - Documentation
 - Public repositories
 - Technical blogs
@@ -239,6 +284,7 @@ site:company.com
 Google Dorking is often used during passive reconnaissance.
 
 **Objectives:**
+
 - Discover assets
 - Find documentation
 - Locate APIs
@@ -246,21 +292,25 @@ Google Dorking is often used during passive reconnaissance.
 - Understand application structure
 
 ### Example 1: Find API References
+
 ```text
 site:target.com inurl:api
 ```
 
 ### Example 2: Find Documentation
+
 ```text
 site:target.com inurl:docs
 ```
 
 ### Example 3: Find Swagger References
+
 ```text
 site:target.com swagger
 ```
 
 ### Example 4: Find Developer Portals
+
 ```text
 site:target.com developer
 ```
@@ -271,15 +321,20 @@ site:target.com developer
 
 Researchers can use advanced operators for:
 
-- **Academic Research:** 
+- **Academic Research:**
+
   ```text
   site:edu filetype:pdf
   ```
-- **Government Research:** 
+
+- **Government Research:**
+
   ```text
   site:gov filetype:pdf
   ```
-- **Technical Documentation:** 
+
+- **Technical Documentation:**
+
   ```text
   filetype:pdf user guide
   ```
@@ -297,6 +352,7 @@ Developers can use search operators to find:
 - Public code examples
 
 **Example:**
+
 ```text
 site:docs.example.com authentication
 ```
@@ -310,12 +366,13 @@ The repository contains categorized examples inside:
 - `Dorks/`
 - `Examples/`
 
-**Each example includes:** 
+**Each example includes:**
 Objective, Query, Explanation, Expected Results, Practical Use Cases, Dork Generator
 
 A simple utility that generates commonly used search queries.
 
 **Example Output:**
+
 ```text
 site:example.com
 site:example.com filetype:pdf
@@ -357,17 +414,20 @@ Google-Dorking-Playbook/
 
 ## Learning Path
 
-### 1. Beginner:
+### 1. Beginner
+
 - Learn basic operators
 - Practice site searches
 - Practice document discovery
 
-### 2. Intermediate:
+### 2. Intermediate
+
 - Combine operators
 - Perform OSINT research
 - Create search workflows
 
-### 3. Advanced:
+### 3. Advanced
+
 - Asset discovery
 - Recon automation
 - Search optimization techniques
@@ -379,6 +439,7 @@ Google-Dorking-Playbook/
 Contributions are welcome.
 
 **You can help by:**
+
 - Adding new examples
 - Improving explanations
 - Fixing inaccuracies
@@ -386,6 +447,7 @@ Contributions are welcome.
 - Developing utilities
 
 > **Before submitting a pull request:**
+>
 > - Follow repository guidelines
 > - Ensure examples remain educational
 > - Avoid including sensitive or unauthorized targets
@@ -397,6 +459,7 @@ Contributions are welcome.
 **This repository is intended solely for educational, research, and authorized security assessment purposes.**
 
 The author does not encourage:
+
 - Unauthorized access
 - Privacy violations
 - Illegal activity
